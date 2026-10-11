@@ -363,7 +363,8 @@ function createHeart(){
 
     heart.className="heart";
 
-    heart.innerHTML="❤️";
+    const symbols = ["❤️","🌹","💖","🌺"];
+    heart.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
 
     heart.style.left=Math.random()*100+"vw";
 
@@ -377,7 +378,8 @@ function createHeart(){
     },8000);
 }
 
-setInterval(createHeart,300);
+
+setInterval(createHeart,200);
 
 window.onscroll = function() {
 
