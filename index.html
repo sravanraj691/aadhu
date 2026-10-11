@@ -253,8 +253,7 @@ Sravan ❤️
 ❤️ My Favorite Person Forever ❤️
 </div>
 
-<audio id="music" loop preload="auto">
-    song.mp3
+song.mp3
     Your browser does not support audio.
 </audio>
 
@@ -296,22 +295,12 @@ updateCounter();
 function toggleMusic() {
     const music = document.getElementById("music");
 
-    console.log("Audio Source:", music.src);
-
     if (music.paused) {
-        music.play()
-        .then(() => {
-            console.log("Song started");
-        })
-        .catch(error => {
-            console.error("Audio Error:", error);
-            alert("Actual Error: " + error.message);
-        });
+        music.play();
     } else {
         music.pause();
     }
 }
-
 function showMessage(){
     const msg = document.getElementById("message");
 
