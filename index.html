@@ -253,7 +253,9 @@ Sravan ❤️
 ❤️ My Favorite Person Forever ❤️
 </div>
 
-<audio id="music" src="song.mp3" t support audio.
+<audio id="music" loop preload="auto">
+    song.mp3
+    Your browser does not support audio.
 </audio>
 
 </div>
@@ -363,8 +365,7 @@ function createHeart(){
 
     heart.className="heart";
 
-    const symbols = ["❤️","🌹","💖","🌺"];
-    heart.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+    heart.innerHTML="❤️";
 
     heart.style.left=Math.random()*100+"vw";
 
@@ -378,8 +379,7 @@ function createHeart(){
     },8000);
 }
 
-
-setInterval(createHeart,200);
+setInterval(createHeart,300);
 
 window.onscroll = function() {
 
