@@ -122,6 +122,26 @@ h1{
     font-weight:bold;
 }
 
+#topBtn{
+display:none;
+position:fixed;
+bottom:20px;
+right:20px;
+z-index:999;
+border:none;
+background:white;
+color:#ff4081;
+cursor:pointer;
+padding:15px;
+border-radius:50%;
+font-size:24px;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+#topBtn:hover{
+transform:scale(1.1);
+}
+
 @media(max-width:768px){
 
     h1{
@@ -240,6 +260,10 @@ Sravan ❤️
 
 </div>
 
+<button id="topBtn" onclick="scrollToTop()">
+    ❤️
+</button>
+
 <script>
 
 const startDate =
@@ -355,6 +379,27 @@ function createHeart(){
 }
 
 setInterval(createHeart,300);
+
+window.onscroll = function() {
+
+const topBtn = document.getElementById("topBtn");
+
+if (
+document.body.scrollTop > 200 ||
+document.documentElement.scrollTop > 200
+){
+topBtn.style.display = "block";
+}else{
+topBtn.style.display = "none";
+}
+};
+
+function scrollToTop(){
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+}
 
 </script>
 
