@@ -294,21 +294,21 @@ setInterval(updateCounter,1000);
 updateCounter();
 
 function toggleMusic() {
-
     const music = document.getElementById("music");
 
+    console.log("Audio Source:", music.src);
+
     if (music.paused) {
-
         music.play()
+        .then(() => {
+            console.log("Song started");
+        })
         .catch(error => {
-            alert("Could not play song. Check if song.mp3 exists in the same folder.");
-            console.log(error);
+            console.error("Audio Error:", error);
+            alert("Actual Error: " + error.message);
         });
-
     } else {
-
         music.pause();
-
     }
 }
 
